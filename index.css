@@ -80,7 +80,7 @@
             transition: 0.2s ease;
             margin-right: 20px;
         }
-        
+
         .yes-div {
             display: flex;
             justify-content: center;
@@ -148,6 +148,7 @@
             width: 160px;
             height: 100vh;
             position: fixed;
+            z-index: 9999;
             left: 0;
             top: 0;
             transition: 0.3s ease;
@@ -183,7 +184,7 @@
             }
 
             /* HAMBURGER */
-            .sidebar-toggle {
+        .sidebar-toggle {
             display: none;
             font-size: 30px;
             color: white;
@@ -546,8 +547,8 @@
             align-items: center;    /* Centers text horizontally inside the card */
             
             background-color: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
             
             padding: 30px;
             min-height: 400px;
@@ -561,8 +562,8 @@
         }
 
         .in-div:hover {
-            transform: scale(0.98);
-            opacity: 0.9;
+            opacity: 0.7;
+            background-color: rgb(88, 88, 167);
         }
 
         /* Standard paragraph spacing inside cards */
@@ -571,14 +572,14 @@
             text-align: center;
         }
 
-        .in-div1 {
+        .in-div0 {
             display: flex;
             flex-direction: column; /* Stacks text vertically inside the card */
             align-items: center;    /* Centers text horizontally inside the card */
             
-            background-color: rgb(203, 31, 31);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
             
             padding: 30px;
             min-height: 400px;
@@ -588,11 +589,86 @@
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
             margin-top: 120px;
             color: white;
+            padding-bottom: 144px;
+        }
+
+        .in-div0:hover {
+            opacity: 0.7;
+            background-color: rgb(88, 88, 167);
+        }
+
+        /* Standard paragraph spacing inside cards */
+        .in-div0 p {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        /* --- Corrected Card Links to Animations --- */
+.in-div {
+    animation: slideLeft 1s ease-out forwards;
+}
+
+.in-div1 {
+    animation: slideRight 1s ease-out forwards;
+}
+
+.in-div0 {
+    animation: slideUp 1s ease-out forwards;
+}
+
+.in-div2 {
+    animation: slideDown 1s ease-out forwards; /* Fixed name to match below */
+}
+
+.in-div3 {
+    animation: slideRight 1s ease-out forwards; /* Fixed name to match below */
+}
+
+/* --- Corrected Keyframes --- */
+@keyframes slideLeft {
+    0% { opacity: 0; transform: translateX(-100px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+    0% { opacity: 0; transform: translateX(100px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideUp {
+    0% { opacity: 0; transform: translateY(-100px); }
+    100% { opacity: 1; transform: translateY(0); } /* Fixed from translateX */
+}
+
+@keyframes slideDown { /* Fixed name mismatch and typo */
+    0% { opacity: 0; transform: translateY(100px); }
+    100% { opacity: 1; transform: translateY(0); } /* Fixed from translateX */
+}
+
+        .in-div1 {
+            display: flex;
+            flex-direction: column; /* Stacks text vertically inside the card */
+            align-items: center;    /* Centers text horizontally inside the card */
+            
+            background-color: rgb(203, 31, 31);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+            
+            padding: 30px;
+            min-height: 400px;
+            width: 280px;
+            border-radius: 12px;
+            transition: 0.4s;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            margin-top: 120px;
+            color: white;
+            z-index: 999;
+            padding-bottom: 1px;
         }
 
         .in-div1:hover {
-            transform: scale(0.98);
-            opacity: 0.9;
+            opacity: 0.7;
+            background-color: rgb(88, 88, 167);
         }
 
         /* Standard paragraph spacing inside cards */
@@ -606,28 +682,75 @@
             flex-direction: column; /* Stacks text vertically inside the card */
             align-items: center;    /* Centers text horizontally inside the card */
             
-            background-color: purple;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background-color: rgb(43, 28, 43);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
             
             padding: 30px;
             min-height: 400px;
-            width: 1000px;
+            width: 280px;
             border-radius: 12px;
-            transition: 0.4s;
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
             margin-top: 50px;
             margin-bottom: 50px;
             color: white;
+            padding-bottom: 144px;
+            z-index: 999;
+            transition: 0.4s;
+            box-shadow: 0 0 5px #ff0000,
+                        0 0 10px #ff0000,
+                        0 0 20px  #ff0000;
         }
 
         .in-div2:hover {
-            transform: scale(0.98);
-            opacity: 0.9;
+            opacity: 0.7;
+            background-color: black;
+        }
+
+        .in-div2.animate {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Standard paragraph spacing inside cards */
         .in-div2 p {
+            margin: 10px 0;
+            text-align: center;
+        }
+
+                .in-div6 {
+            display: flex;
+            flex-direction: column; /* Stacks text vertically inside the card */
+            align-items: center;    /* Centers text horizontally inside the card */
+            
+            background-color: rgb(43, 28, 43);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+            
+            padding: 30px;
+            min-height: 400px;
+            width: 280px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            margin-top: 50px;
+            margin-bottom: 50px;
+            color: white;
+            padding-bottom: 144px;
+            margin-top: 20px;
+            z-index: 999;
+            transition: 0.4s;
+            box-shadow: 0 0 5px #ff0000,
+                        0 0 10px #ff0000,
+                        0 0 20px  #ff0000;
+        }
+
+        .in-div6:hover {
+            opacity: 0.7;
+            background-color: black;
+        }
+
+        /* Standard paragraph spacing inside cards */
+        .in-div6 p {
             margin: 10px 0;
             text-align: center;
         }
@@ -637,22 +760,23 @@
             flex-direction: column; /* Stacks text vertically inside the card */
             align-items: center;    /* Centers text horizontally inside the card */
             
-            background-color: #646464;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
+            background-color: rgb(203, 31, 31);
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
             
             padding: 30px;
             min-height: 400px;
-            width: 1000px;
+            width: 280px;
             border-radius: 12px;
-            transition: 1s;
+            transition: 0.4s;
             box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            margin-top: 50px;
+            margin-top: 120px;
             color: white;
+            z-index: 999;
+            padding-bottom: 144px;
         }
 
         .in-div3:hover {
-            transform: scale(0.98);
             opacity: 0.9;
             background-color: rgb(88, 88, 167);
         }
