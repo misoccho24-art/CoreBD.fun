@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rank Cards</title>
+    <title>Store</title>
     <link rel="stylesheet" href="index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +59,7 @@
         </a>
 
         <a href="finishing.html">
-                    <div class="in-div">
+                    <div class="in-div0">
             <p class="line">king Rank</p>
             <p class="r">BDT 450</p>
             <p class="ro">350</p>
@@ -67,7 +67,6 @@
             <p>5 Homes</p>
             <p>/anvil</p>
             <p>/craft</p>
-            <p>/invcheck</p>
         </div>
         </a>
 
@@ -76,7 +75,7 @@
             <p class="ro">HOT DEAL</p>
             <p class="line">phantom Rank</p>
             <p class="r">BDT 700</p>
-            <p class="ro">550</p>
+            <p class="ro">450</p>
             <p>In Game Cash - 1,000,000</p>
             <p>10 Homes</p>
             <p>/anvil</p>
@@ -84,6 +83,7 @@
             <p>/echest</p>
             <p>/smithing</p>
             <p>/sleep</p>
+            <p>/incheck</p>
         </div>
         </a>
 
@@ -91,33 +91,67 @@
                     <div class="in-div2">
             <p class="line">dragon Rank</p>
             <p class="r">BDT 900</p>
-            <p class="ro">700<p>
+            <p class="ro">700</p>
             <p>In Game Cash - 1,500,000</p>
-            <p>10 Homes</p>
+            <p>15 Homes</p>
             <p>/anvil</p>
             <p>/craft</p>
             <p>/echest</p>
             <p>/smithing</p>
             <p>/sleep</p>
+            <p>/invcheck</p>
+            <p>/pv 1-5</p>
         </div>
         </a>
 
     </div>
 
     <script>
-            hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("open");
-        sidebar.classList.toggle("close");
+document.addEventListener("DOMContentLoaded", () => {
+    // 1. Navbar Declarations (Fixed missing variable definitions)
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("navLinks");
+    const toggle = document.getElementById("sidebarToggle");
+    const sidebar = document.getElementById("sidebar");
+
+    if (hamburger && navLinks && sidebar) {
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("open");
+            sidebar.classList.toggle("close");
+        });
+    }
+
+    if (toggle && sidebar && navLinks) {
+        toggle.addEventListener("click", () => {
+            sidebar.classList.toggle("open");
+            navLinks.classList.toggle("close");
+        });
+    }
+
+    // 2. Intersection Observer for Scrolling Cards
+    // Select ALL elements that need scroll animation
+    const scrollElements = document.querySelectorAll('.in-div2, .in-div6');
+
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15 // Triggers when 15% is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+                observer.unobserve(entry.target); // Animates only once
+            }
+        });
+    }, options);
+
+    scrollElements.forEach(el => {
+        observer.observe(el);
     });
-
-  const toggle = document.getElementById("sidebarToggle");
-  const sidebar = document.getElementById("sidebar");
-
-  toggle.addEventListener("click", () => {
-    sidebar.classList.toggle("open");
-    navLinks.classList.toggle("close");
-  });
-    </script>
+});
+</script>
 
 </body>
 </html>
