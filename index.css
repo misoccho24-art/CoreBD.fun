@@ -5,7 +5,7 @@
 
         /* NAVBAR BASE */
         .nav {
-            background-color: #505050;
+            background-color: transparent;
             font-family: arial;
             height: 90px;
             display: flex;
@@ -15,7 +15,8 @@
             top: 0;
             z-index: 1000;
             margin-top: 0px;
-            width: 1456px;
+            width: 1470px;
+            padding-left: 10px;
 
         }
 
@@ -133,6 +134,7 @@
 
             .logo a {
                 margin-right: 20px;
+                background-color: transparent;
             }
 
             .p-account {
@@ -144,7 +146,7 @@
         }
 
           .nav-list {
-            background-color: #505050;
+            background-color: transparent;
             width: 160px;
             height: 100vh;
             position: fixed;
@@ -245,12 +247,14 @@
 
         .footer {
                 padding: 10px;
-                background-color: #505050;
+                background-color: transparent;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 margin: 0 auto;
                 margin-top: 612px;
+                border-top: #505050;
+                border: 1px;
         }
 
         .div-f {
@@ -396,10 +400,13 @@
             height: 55px;
             transition: 0.2s ease;
             cursor: pointer;
+            transition: 0.4s;
         }
 
         .fliers-but:hover {
-            background-color: rgb(108, 112, 126);
+            box-shadow: 0 0 5px #ACB0C2,
+                        0 0 5px #ACB0C2,
+                        0 0 5px #ACB0C2;
         }
 
         .button-div {
@@ -493,6 +500,8 @@
         z-index: 9998;
         }
 
+        
+
     .loader {
     width: 40px;
     aspect-ratio: 1;
@@ -529,310 +538,150 @@
             font-family: Arial, sans-serif;
             color: #ffffff;
             margin: 0;
-            padding: 40px 20px;
+
         }
 
-        /* This container holds all 3 cards and puts them in a row */
-        .card-container {
-            display: flex;
-            justify-content: center;
-            gap: 20px; /* Space between the cards */
-            flex-wrap: wrap; /* Allows them to drop to a new line on smaller screens */
-        }
-
-        /* The individual card styling */
-        .in-div {
-            display: flex;
-            flex-direction: column; /* Stacks text vertically inside the card */
-            align-items: center;    /* Centers text horizontally inside the card */
-            
-            background-color: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(1px);
-            -webkit-backdrop-filter: blur(1px);
-            
-            padding: 30px;
-            min-height: 400px;
-            width: 280px;
-            border-radius: 12px;
-            transition: 0.4s;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            margin-top: 120px;
-            color: white;
-            padding-bottom: 144px;
-        }
-
-        .in-div:hover {
-            opacity: 0.7;
-            background-color: rgb(88, 88, 167);
-        }
-
-        /* Standard paragraph spacing inside cards */
-        .in-div p {
-            margin: 10px 0;
-            text-align: center;
-        }
-
-        .in-div0 {
-            display: flex;
-            flex-direction: column; /* Stacks text vertically inside the card */
-            align-items: center;    /* Centers text horizontally inside the card */
-            
-            background-color: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(0px);
-            -webkit-backdrop-filter: blur(0px);
-            
-            padding: 30px;
-            min-height: 400px;
-            width: 280px;
-            border-radius: 12px;
-            transition: 0.4s;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            margin-top: 120px;
-            color: white;
-            padding-bottom: 144px;
-        }
-
-        .in-div0:hover {
-            opacity: 0.7;
-            background-color: rgb(88, 88, 167);
-        }
-
-        /* Standard paragraph spacing inside cards */
-        .in-div0 p {
-            margin: 10px 0;
-            text-align: center;
-        }
-
-        /* --- Corrected Card Links to Animations --- */
-.in-div {
-    animation: slideLeft 1s ease-out forwards;
+        .leader {
+    display: flex;
+    justify-content: center; /* Centers the cards horizontally */
+    gap: 20px;
+    flex-wrap: wrap;        /* Essential to allow line-breaking */
+    width: 100%;
+    max-width: 1300px;      /* Prevents them from spreading too far apart */
+    margin: 0 auto;
 }
 
-.in-div1 {
-    animation: slideRight 1s ease-out forwards;
+/* Ensure all 4 wrappers have the exact same starting width */
+.independent, .indepe, .indep, .inde {
+    width: 375px; 
 }
 
-.in-div0 {
-    animation: slideUp 1s ease-out forwards;
+/* THE MAGIC TRICK: The invisible line breaker */
+.break {
+    flex-basis: 100%;
+    height: 0;
 }
 
-.in-div2 {
-    animation: slideDown 1s ease-out forwards; /* Fixed name to match below */
+/* Optional styling to make the 4th card perfectly centered underneath */
+.inde {
+    margin-top: 20px; /* Adds space between the top row and bottom card */
 }
 
-.in-div3 {
-    animation: slideRight 1s ease-out forwards; /* Fixed name to match below */
+/* Keep your card designs standard */
+.in-div, .in-div1, .in-div2, .in-div3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    background-color: #505050;
+    margin-top: 110px;
+    border-radius: 8px;
+    padding-bottom: 0px;
+    transition: 0.4s;
+    /* Your background-colors, padding, borders, animations go here */
 }
 
-/* --- Corrected Keyframes --- */
-@keyframes slideLeft {
-    0% { opacity: 0; transform: translateX(-100px); }
-    100% { opacity: 1; transform: translateX(0); }
-}
+    .in-div3 {
+        margin-top: 1px;
+        margin-bottom: 35px;
+    }
 
-@keyframes slideRight {
-    0% { opacity: 0; transform: translateX(100px); }
-    100% { opacity: 1; transform: translateX(0); }
-}
+    .in-div:hover, .in-div1:hover, .in-div2:hover, .in-div3:hover {
+        box-shadow: 0 0 5px #c0c0c0, 
+                0 0 10px #c0c0c0, 
+                0 0 15px #c0c0c0;;
+    }
 
-@keyframes slideUp {
-    0% { opacity: 0; transform: translateY(-100px); }
-    100% { opacity: 1; transform: translateY(0); } /* Fixed from translateX */
-}
+    .in-div p, .in-div1 p, .in-div2 p, .in-div3 p {
+        line-height: 50px;
+        font-family: arial;
+        color: white;
+    }
 
-@keyframes slideDown { /* Fixed name mismatch and typo */
-    0% { opacity: 0; transform: translateY(100px); }
-    100% { opacity: 1; transform: translateY(0); } /* Fixed from translateX */
-}
+    .in-div, .in-div1, .in-div2 {
+        padding-bottom: 72px;
+    }
 
-        .in-div1 {
-            display: flex;
-            flex-direction: column; /* Stacks text vertically inside the card */
-            align-items: center;    /* Centers text horizontally inside the card */
-            
-            background-color: rgb(203, 31, 31);
-            backdrop-filter: blur(1px);
-            -webkit-backdrop-filter: blur(1px);
-            
-            padding: 30px;
-            min-height: 400px;
-            width: 280px;
-            border-radius: 12px;
-            transition: 0.4s;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            margin-top: 120px;
-            color: white;
-            z-index: 999;
-            padding-bottom: 1px;
-        }
+    .in-div, .in-div1 {
+        padding-bottom: 132px;
+    }
 
-        .in-div1:hover {
-            opacity: 0.7;
-            background-color: rgb(88, 88, 167);
-        }
-
-        /* Standard paragraph spacing inside cards */
-        .in-div1 p {
-            margin: 10px 0;
-            text-align: center;
-        }
-
-        .in-div2 {
-            display: flex;
-            flex-direction: column; /* Stacks text vertically inside the card */
-            align-items: center;    /* Centers text horizontally inside the card */
-            
-            background-color: rgb(43, 28, 43);
-            backdrop-filter: blur(1px);
-            -webkit-backdrop-filter: blur(1px);
-            
-            padding: 30px;
-            min-height: 400px;
-            width: 280px;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            margin-top: 50px;
-            margin-bottom: 50px;
-            color: white;
-            padding-bottom: 144px;
-            z-index: 999;
-            transition: 0.4s;
-            box-shadow: 0 0 5px #ff0000,
-                        0 0 10px #ff0000,
-                        0 0 20px  #ff0000;
-        }
-
-        .in-div2:hover {
-            opacity: 0.7;
-            background-color: black;
-        }
-
-        .in-div2.animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Standard paragraph spacing inside cards */
-        .in-div2 p {
-            margin: 10px 0;
-            text-align: center;
-        }
-
-                .in-div6 {
-            display: flex;
-            flex-direction: column; /* Stacks text vertically inside the card */
-            align-items: center;    /* Centers text horizontally inside the card */
-            
-            background-color: rgb(43, 28, 43);
-            backdrop-filter: blur(1px);
-            -webkit-backdrop-filter: blur(1px);
-            
-            padding: 30px;
-            min-height: 400px;
-            width: 280px;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            margin-top: 50px;
-            margin-bottom: 50px;
-            color: white;
-            padding-bottom: 144px;
-            margin-top: 20px;
-            z-index: 999;
-            transition: 0.4s;
-            box-shadow: 0 0 5px #ff0000,
-                        0 0 10px #ff0000,
-                        0 0 20px  #ff0000;
-        }
-
-        .in-div6:hover {
-            opacity: 0.7;
-            background-color: black;
-        }
-
-        /* Standard paragraph spacing inside cards */
-        .in-div6 p {
-            margin: 10px 0;
-            text-align: center;
-        }
+    .in-div {
+        padding-bottom: 182px;
+    }
 
         .in-div3 {
-            display: flex;
-            flex-direction: column; /* Stacks text vertically inside the card */
-            align-items: center;    /* Centers text horizontally inside the card */
-            
-            background-color: rgb(203, 31, 31);
-            backdrop-filter: blur(1px);
-            -webkit-backdrop-filter: blur(1px);
-            
-            padding: 30px;
-            min-height: 400px;
-            width: 280px;
-            border-radius: 12px;
-            transition: 0.4s;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            margin-top: 120px;
-            color: white;
-            z-index: 999;
-            padding-bottom: 144px;
-        }
+        padding-bottom: 52px;
+    }
 
-        .in-div3:hover {
-            opacity: 0.9;
-            background-color: rgb(88, 88, 167);
-        }
+    
+/* Keep your card designs standard */
+.in-div0, .in-div4, .in-div5, .in-div6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    background-color: #505050;
+    margin-top: 110px;
+    border-radius: 8px;
+    padding-bottom: 20px;
+    transition: 0.4s;
+    /* Your background-colors, padding, borders, animations go here */
+}
 
-        /* Standard paragraph spacing inside cards */
-        .in-div3 p {
-            margin: 10px 0;
-            text-align: center;
-        }
+    .in-div6 {
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
 
-        .body
+    .in-div6 {
+        box-shadow: 
+                0 0 5px #c0c0c0, 
+                0 0 10px #c0c0c0, 
+                0 0 15px #c0c0c0;
+    }
 
-        .line {
+    .in-div0:hover, .in-div4:hover, .in-div5:hover, .in-div6:hover {
+        box-shadow: 
+                0 0 5px #c0c0c0, 
+                0 0 10px #c0c0c0, 
+                0 0 15px #c0c0c0;
+    }
+
+    .in-div0 p, .in-div4 p, .in-div5 p, .in-div6 p {
+        line-height: 50px;
+        font-family: arial;
+        color: white;
+    }
+
+
+        .rank {
             font-size: 26px;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 1px;
             font-family: "Kaushan Script";
+            color: white;
         }
 
-        .r {
+        .drank {
+            font-size: 26px;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: "Kaushan Script";
+            color: rgb(0, 0, 0);
+        }
+
+        .og {
             font-weight: bold;
             color: rgba(255, 255, 255, 0.6);
             text-decoration: line-through;
             font-size: 18px;
-        }
-
-        .button-coins {
-            padding: 10px;
-            width: 420px;
-            font-family: arial;
-            font-size: 18px;
-            color: #2b2b2b;
-            margin-top:  50px;
-            height: 50px;
-            border-radius: 8px;
-            border: none;
-            transition: 0.4s;
-            margin-bottom: 50px;
-        }
-
-        .button-coins:hover {
-            opacity: 0.8;
-            cursor: pointer;
-        }
-
-        .ro1 {
-            font-family: arial;
-            margin-top: 25px;
-            font-weight: 800;
             color: white;
-            font-size: 25px;
-            width: 50%;
         }
 
-        .ro {
+        .dis {
             font-size: 45px;
             font-weight: bold;
             color: #fff;
@@ -843,101 +692,69 @@
                 0 0 20px #ff0000;
         }
 
-         .body{
-            margin: 0;
-            padding: 0;
-            background-color: #2b2b2b;
-         } 
-
-         .out-body {
-            display: block;
-         }
-
-        .video {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -100; /* Pushes the video behind your text */
-            object-fit: cover; /* Prevents video distortion */
-            filter: blur(4px);
-            will-change: transform;
-            transform: translate3d(0, 0, 0);
-            backface-visibility: hidden;
-            display: flex;
+        .in-div3 {
+            box-shadow:                 
+                0 0 5px #c0c0c0, 
+                0 0 10px #c0c0c0, 
+                0 0 15px #c0c0c0;
         }
 
-        .video1 {
-            position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
-            width: auto;
-            height: auto;
-            z-index: -100; /* Pushes the video behind your text */
-            object-fit: cover; /* Prevents video distortion */
-            filter: blur(4px);
-            will-change: transform;
-            transform: translate3d(0, 0, 0);
-            backface-visibility: hidden;
-            border-radius: 8px;
-            display: flex;
+.in-div {
+    animation: slideLeft 1s ease-out forwards;
+}
+
+.in-div1 {
+    animation: slideRight 1s ease-out forwards;
+}
+
+.in-div2 {
+    animation: slideDown 1s ease-out forwards; /* Fixed name to match below */
+}
+
+.in-div3 {
+    animation: slideUp 1s ease-out forwards; /* Fixed name to match below */
+}
+
+/*00000000000000000000000000000000000000000000000000000000000000000000*/
+
+.in-div0 {
+    animation: slideLeft 1s ease-out forwards;
+}
+
+.in-div4 {
+    animation: slideRight 1s ease-out forwards;
+}
+
+.in-div5 {
+    animation: slideDown 1s ease-out forwards; /* Fixed name to match below */
+}
+
+.in-div6 {
+    animation: slideUp 1s ease-out forwards; /* Fixed name to match below */
+}
+
+/* --- Corrected Keyframes --- */
+@keyframes slideLeft {
+    0% { opacity: 0; transform: translateX(-100px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideDown {
+    0% { opacity: 0; transform: translateX(100px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+    0% { opacity: 0; transform: translateY(-100px); }
+    100% { opacity: 1; transform: translateY(0); } /* Fixed from translateX */
+}
+
+@keyframes slideUp { /* Fixed name mismatch and typo */
+    0% { opacity: 0; transform: translateY(100px); }
+    100% { opacity: 1; transform: translateY(0); } /* Fixed from translateX */
         }
 
-        .ending-files {
-            color: #2b2b2b;
-        }
-
-        .button-coins1 {
-            padding: 10px;
-            width: 50px;
-            font-family: arial;
-            font-size: 18px;
-            color: #2b2b2b;
-            margin-top:  50px;
-            height: 50px;
-            border-radius: 8px;
-            border: none;
-            transition: 0.4s;
-            margin-bottom: 50px;
-            background-color: #505050;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .button-coins1:hover {
-            opacity: 0.7;
-        }
-
-        .video-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            
-            /* Changes the dimness. 0.5 = 50% dark. Raise to 0.7 for darker. */
-            background-color: rgba(0, 0, 0, 0.5); 
-            
-            z-index: -99; /* Sits directly on top of video, but under text */
-    }
-
-        /* Place web content smoothly over the video background */
-        .content {
-            position: relative;
-            z-index: 1;
-            color: white;
-            font-family: sans-serif;
-            text-align: center;
-            margin-top: 20%;
-        }
-
-        .a-href {
+                .a-href {
             text-decoration: underline;
         }
 
@@ -945,6 +762,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            
         }
 
         .freedom-div {
@@ -1004,3 +822,187 @@
             margin-top: 25px;
             text-align: center;
         }
+
+        .button-coins {
+            padding: 10px;
+            width: 420px;
+            font-family: arial;
+            font-size: 18px;
+            color: #2b2b2b;
+            margin-top:  50px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+            transition: 0.4s;
+            margin-bottom: 50px;
+            background-color: white;
+        }
+
+        .button-coins1 {
+            padding: 10px;
+            width: 50px;
+            font-family: arial;
+            font-size: 18px;
+            color: #2b2b2b;
+            margin-top:  50px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+            transition: 0.4s;
+            margin-bottom: 50px;
+            background-color: #505050;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .button-coins1:hover, .button-coins:hover {
+            opacity: 0.6;
+            cursor: pointer;
+        }
+
+        .ending-files {
+            background-color: #505050;
+        }
+
+        /* Hide the perks by default and set up the smooth transition */
+.perks-dropdown {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, opacity 0.3s ease;
+    opacity: 0;
+    width: 100%;
+    text-align: center;
+    margin-top: 0;
+}
+
+/* When the card gets the "active" class, smoothly expand it */
+.in-div.active .perks-dropdown {
+    max-height: 200px; /* Adjust this number based on how long your longest perk list is */
+    opacity: 1;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* Style your button nicely */
+.toggle-perks-btn {
+    background: #ff0000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: auto; /* Pushes the button to the absolute bottom of the card */
+    transition: 0.2s;
+}
+
+.toggle-perks-btn:hover {
+    background: #cc0000;
+}
+
+.leader-final {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.instruc {
+    background-color: #5865F2;
+    line-height: 50px;
+    margin-top: 50px;
+    padding: 15px;
+    border-radius: 15px;
+    height: 430px;
+}
+
+.discord {
+    padding: 10px;
+    width: 120px;
+    background-color: cyan;
+    border: none;
+    border-radius: 8px;
+    transition: 0.4s;
+}
+
+.discord:hover {
+        box-shadow: 0 0 5px #00FFFF, 
+                0 0 10px #00FFFF, 
+                0 0 15px #00FFFF;
+}
+
+.discord1 {
+    padding: 10px;
+    width: 320px;
+    background-color: cyan;
+    border: none;
+    border-radius: 8px;
+    height: 50px;
+    transition: 0.4s;
+    margin-top: 50px;
+    font-size: 18px;
+}
+
+.discord1:hover {
+        box-shadow: 0 0 5px #00FFFF, 
+                0 0 10px #00FFFF, 
+                0 0 15px #00FFFF;
+}
+
+.body
+
+ .cancel {
+    padding: 10px;
+    width: 120px;
+    background-color: cyan;
+    border: none;
+    border-radius: 8px;
+    opacity: 0.5;
+    transition: 0.4s;
+ }
+
+ .cancel:hover {
+    opacity: 0.7;
+ }
+
+ .video {
+    
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100; /* Pushes the video behind your text */
+            object-fit: cover; /* Prevents video distortion */
+            filter: blur(0px);
+            will-change: transform;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            display: flex;
+ }
+
+ .video-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 1456px;
+            height: 100%;
+            overflow: hidden;
+            
+            /* Changes the dimness. 0.5 = 50% dark. Raise to 0.7 for darker. */
+            background-color: rgba(0, 0, 0, 0.5); 
+            
+            z-index: -99; /* Sits directly on top of video, but under text */
+ }
+
+
+    .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+            margin-top: 20%;
+    }
